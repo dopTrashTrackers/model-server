@@ -18,7 +18,7 @@ app = FastAPI()
 # Allow CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # You might want to restrict this in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -179,5 +179,5 @@ async def dashboard():
 # Main execution
 if __name__ == "__main__":
     import uvicorn
-    port = int(os.environ.get("PORT", 8000))
+    port = int(os.environ.get("PORT", 10000))  # Render uses dynamic port
     uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)

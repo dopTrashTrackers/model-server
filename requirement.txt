@@ -1,0 +1,7 @@
+gunicorn
+fastapi
+uvicorn[standard]
+numpy
+opencv-python-headless
+onnxruntime
+
